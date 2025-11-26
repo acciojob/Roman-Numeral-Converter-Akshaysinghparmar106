@@ -10,8 +10,20 @@ function convertToRoman(num) {
     };
 
   //your code here
+	 let result = "";
+
+  for (let i = 0; i < romanMap.length; i++) {
+    while (num >= romanMap[i].value) {
+      result += romanMap[i].symbol;
+      num -= romanMap[i].value;
+    }
+  }
+
+  return result;
 
 }
+console.log(convertToRoman(14));   // XIV
+console.log(convertToRoman(798)); 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(convertToRoman(36));
